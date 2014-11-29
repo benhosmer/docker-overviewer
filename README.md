@@ -7,5 +7,7 @@ generate minecraft maps from a minecraft world.
 2. Start the container:
   - docker run -d -v /vagrant/overviewer-data:/overviewer/world -v /vagrant/overviewer-data/maps/:/overviewer/maps --name="overviewer" overviewer:latest`
 
-***More to come***
+**NOTE**
+The container defaults to version 1.8, but using the `-e` environment flag you can specifiy which version of minecraft your world was created from:
+`docker run -d -v /vagrant/overviewer-data:/overviewer/world -v /vagrant/overviewer-data/maps/:/overviewer/maps -e "MCVERSION=1.8.1" --name="overviewer" overviewer:latest`
 
