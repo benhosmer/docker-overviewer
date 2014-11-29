@@ -3,7 +3,7 @@ from centos:centos6
 MAINTAINER Ben Hosmer <ben.hosmer@gmail.com>
 
 # Add the overviewer repository, EPEL, and install overviewer.
-RUN yum install -y wget &&  wget -O /etc/yum.repos.d/overviewer.repo http://overviewer.org/rpms/overviewer.repo && rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm && yum -y update && yum -y install Minecraft-Overviewer   
+RUN yum install -y wget &&  wget -O /etc/yum.repos.d/overviewer.repo http://overviewer.org/rpms/overviewer.repo && rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm && yum -y update && yum -y install Minecraft-Overviewer && wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8/1.8.jar -P /root/.minecraft/versions/1.8/ 
 
 ADD overviewer.cfg /overviewer.cfg
 
