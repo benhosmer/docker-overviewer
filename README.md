@@ -4,7 +4,9 @@ This dockerfile creates a [Minecraft Overviewer](overviewer.org) container  to
 generate minecraft maps from a minecraft world.
 
 1. Edit the `overviewer.cfg` file to point to your world files and set the output directory and other options.
-2. Start the container:
+2. Build the container:
+    - `# docker build --tag=overviewer .`
+3. Start the container:
     - `# docker run -d -v /vagrant/overviewer-data/world:/overviewer/world -v /vagrant/overviewer-data/maps/:/overviewer/maps --name="overviewer" overviewer:latest`
     - You need to copy or supply your world directory to the location specified above `/vagrant/overviewer-data/world`
     - Your map will be exported to the second directory, `/overviewer/maps`
